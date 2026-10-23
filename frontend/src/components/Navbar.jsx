@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {assets} from '../assets/assets'
 import {NavLink,Link} from 'react-router-dom'
 const Navbar = () => {
@@ -45,6 +45,9 @@ const Navbar = () => {
                 <p className='absolute right-[-5px] bottom-[-5px] w-4 text-center leading-4 bg-black text-white aspect-square rounded-full text-[8px]'>0</p>
             </Link>
             <img onClick={() => setVisible(true)} src={assets.menu_icon} className='w-7 cursor-pointer sm:hidden' alt="" />
+        </div>
+        {/* Sidebar menu for small screens */}
+        <div className={`absolute top-0 right-0 bottom-0 overflow-hidden bg-white transition-all ${visible ? 'w-full' : 'w-0'}`}>
         </div>
     </div>
   )
